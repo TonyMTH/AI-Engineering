@@ -24,6 +24,7 @@ def gradient_descent(function, x, max_it, threshold):
     points = []
 
     #plotting
+    X, Y = x, function(x)
     plt.figure()
     plt.plot(X,Y)
     
@@ -57,10 +58,10 @@ threshold = 0.01
 no_of_plots = 4
 
 x = np.linspace(-7,5,10000)
-X, Y = x, function(x)
+
 
 for i in range(no_of_plots):
-    points,it = gradient_descent(function, X, max_it, threshold)
+    points,it = gradient_descent(function, x, max_it, threshold)
     print("done: "+str(i+1)+"/"+str(no_of_plots))
 
 plt.show()
