@@ -11,6 +11,9 @@ from collections import Counter
 
 class NB:
 
+    train_X = None
+    y_train = None
+
     def fit(self,train_X,y_train):
         self.train_X = train_X
         self.y_train = y_train
