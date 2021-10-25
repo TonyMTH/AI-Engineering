@@ -10,7 +10,15 @@ class LogisticRegression:
     sig = None
 
     def fit(self, X, y):
-        """Fit the model according to the given training data"""
+        """Fit the model according to the given training data
+
+        Args:
+            X ([type]): [description]
+            y ([type]): [description]
+
+        Returns:
+            LogisticRegression: [description]
+        """
         one = np.ones(X.shape[0]).reshape(-1,1)
         self.X = X#np.concatenate((one, X), axis=1)
         self.y = y
@@ -33,7 +41,14 @@ class LogisticRegression:
             return 1
 
     def predict_log_proba(self,X):
-        """Get the probabilities"""
+        """[summary]
+
+        Args:
+            X ([type]): [description]
+
+        Returns:
+            [type]: [description]
+        """
         one = np.ones(X.shape[0]).reshape(-1,1)
         X = X#np.concatenate((one, X), axis=1)
         self.sig = self.__sigmoid(np.dot(X,self.C))
